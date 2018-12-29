@@ -22,7 +22,13 @@ class InfoToggle extends HTMLElement {
     }
 
     connectedCallback() {
-
+        if(this.hasAttribute('visible')) {
+            if(this.getAttribute('visible') === 'true') {
+                this._isVisible = true
+                this._infoBox.style.display = 'block'
+                this._toggleButton.textContent = 'Hide'
+            }
+        }
     }
 
     _toggleInfoBox() {
